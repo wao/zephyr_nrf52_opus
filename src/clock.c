@@ -6,11 +6,10 @@
  */
 
 
+#if 0
 #include <errno.h>
 #include <zephyr/types.h>
-#include <device.h>
-#include <clock_control.h>
-#include <drivers/clock_control/nrf_clock_control.h>
+#include <zephyr/drivers/clock_control/nrf_clock_control.h>
 
 
 #define DEBUG_RADIO_XTAL(flag)
@@ -90,4 +89,4 @@ int clk_off(void)
 	return err;
 }
 
-
+#endif

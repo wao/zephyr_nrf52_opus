@@ -6,26 +6,17 @@
  */
 
 
-#include <zephyr.h>
+#include <zephyr/kernel.h>
 #include <stdio.h>
 #include <version.h>
-#include <shell/shell.h>
 
-#include <logging/log.h>
+#include <zephyr/logging/log.h>
 LOG_MODULE_REGISTER(main, LOG_LEVEL_DBG);
-
-#include "radio.h"
-#include "clock.h"
 
 #ifdef CONFIG_AUDIO_CODEC_SGTL5000
 #define AUDIO 1
 #define RADIO 1
 #endif
-
-#if CONFIG_DISPLAY
-#include "gui.h"
-#endif
-
 
 static struct k_sem quit_lock;
 
@@ -51,9 +42,9 @@ void panic(const char *msg)
 /****************************************************************/
 extern int storage_Init (void);
 
-#include "user_led.h"
-void main(void)
+int main(void)
 {
+#if 0
 	LOG_INF("-- Zephyr:\t %s ",KERNEL_VERSION_STRING);
 	LOG_INF("-- Board:\t %s", CONFIG_BOARD);
 	LOG_INF("-- Compiled:\t %s %s", __DATE__, __TIME__);
@@ -96,8 +87,11 @@ void main(void)
 #if AUDIO
 	audio_server_stop();
 #endif
+#endif
+  return 0;
 }
 
+#if 0
 #include <shell/shell.h>
 #include <version.h>
 
@@ -116,3 +110,4 @@ static int cmd_version(const struct shell *shell, size_t argc, char **argv)
 SHELL_CMD_ARG_REGISTER(version, NULL, "Show kernel version", cmd_version, 1, 0);
 
 
+#endif

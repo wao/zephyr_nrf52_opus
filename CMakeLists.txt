@@ -39,7 +39,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} \
 
 target_sources(                     app PRIVATE src/main.c)
 target_sources(                     app PRIVATE src/clock.c)
-target_sources(                     app PRIVATE src/user_led.c)
+#target_sources(                     app PRIVATE src/user_led.c)
 
 
 if(DEFINED CONFIG_AUDIO_CODEC_SGTL5000)
@@ -71,7 +71,7 @@ target_sources(app PRIVATE
 	lib/opus-1.2.1/silk/log2lin.c
 	)
 
-FILE(GLOB_RECURSE nordic_source modules/hal/nordic/nrfx/drivers/src/*.c)
+#FILE(GLOB_RECURSE nordic_source modules/hal/nordic/nrfx/drivers/src/*.c)
 
 
 target_sources(app PRIVATE

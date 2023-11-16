@@ -11,9 +11,18 @@
 #define SAMPLES_UBICORE_NET_USB_OPUS_SRC_AUDIO_CONFIG_H_
 
 #include <stdint.h>
-#include <zephyr.h>
+#include <zephyr/kernel.h>
 
 #include "custom_support.h"
+
+#include <stdint.h>
+typedef uint8_t   u8_t;
+typedef int8_t    s8_t;
+typedef uint16_t  u16_t;
+typedef int16_t   s16_t;
+typedef uint32_t  u32_t;
+typedef int32_t   s32_t;
+typedef uintptr_t mem_ptr_t;
 
 
 // OPUS modes:

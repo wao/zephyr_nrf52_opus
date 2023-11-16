@@ -6,9 +6,10 @@
  */
 
 
-#include <zephyr.h>
+#if 0
+#include <zephyr/kernel.h>
 
-#include <logging/log.h>
+#include <zephyr/logging/log.h>
 LOG_MODULE_REGISTER(stat, LOG_LEVEL_DBG);
 #include <shell/shell.h>
 #include <stdio.h>
@@ -126,3 +127,4 @@ SHELL_STATIC_SUBCMD_SET_CREATE(m_sub_stat,
 /* Creating root (level 0) command "demo" without a handler */
 SHELL_CMD_REGISTER(stat, &m_sub_stat, "Stat commands.", cmd_stat_print);
 
+#endif
